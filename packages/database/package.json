@@ -1,0 +1,25 @@
+{
+  "name": "@shadowclips/database",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.36.4",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "drizzle-kit": "^0.27.2",
+    "typescript": "^5.6.2"
+  }
+}
