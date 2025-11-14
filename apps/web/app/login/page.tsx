@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Github } from "lucide-react";
@@ -13,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { authClient } from "@/lib/auth-client";
+import { signIn } from "@/lib/auth-client";
 
 export default function LoginPage() {
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
@@ -22,7 +21,7 @@ export default function LoginPage() {
   const handleGoogleLogin = async () => {
     setIsGoogleLoading(true);
     try {
-      await authClient.signIn.social({
+      await signIn.social({
         provider: "google",
         callbackURL: "/dashboard",
       });
@@ -35,7 +34,7 @@ export default function LoginPage() {
   const handleGithubLogin = async () => {
     setIsGithubLoading(true);
     try {
-      await authClient.signIn.social({
+      await signIn.social({
         provider: "github",
         callbackURL: "/dashboard",
       });
@@ -46,7 +45,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-background via-muted/20 to-background p-4">
+    <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-background via-muted/20 to-background p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -62,8 +61,8 @@ export default function LoginPage() {
               className="flex justify-center mb-2"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-50 animate-pulse" />
-                <div className="relative bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-4 shadow-lg">
+                <div className="absolute inset-0 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-50 animate-pulse" />
+                <div className="relative bg-linear-to-br from-primary to-primary/80 rounded-2xl p-4 shadow-lg">
                   <svg
                     className="w-10 h-10 text-primary-foreground"
                     viewBox="0 0 24 24"
@@ -100,7 +99,7 @@ export default function LoginPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+              <CardTitle className="text-3xl font-bold bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                 ShadowClips
               </CardTitle>
               <CardDescription className="text-base mt-2">
@@ -121,7 +120,7 @@ export default function LoginPage() {
                 onClick={handleGoogleLogin}
                 disabled={isGoogleLoading}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex items-center justify-center gap-3 w-full">
                   {isGoogleLoading ? (
                     <div className="w-5 h-5 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
@@ -157,7 +156,7 @@ export default function LoginPage() {
                 onClick={handleGithubLogin}
                 disabled={isGithubLoading}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 to-foreground/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-r from-foreground/5 to-foreground/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex items-center justify-center gap-3 w-full">
                   {isGithubLoading ? (
                     <div className="w-5 h-5 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />

@@ -1,16 +1,22 @@
 "use client";
 
-import { authClient } from "@/lib/auth-client";
+import { signOut, useSession } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session, isPending } = useSession();
 
   const handleSignOut = async () => {
-    await authClient.signOut();
+    await signOut();
     router.push("/login");
   };
 
@@ -28,11 +34,11 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background p-8">
+    <div className="min-h-screen bg-linear-to-br from-background via-muted/20 to-background p-8">
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               ShadowClips Dashboard
             </h1>
             <p className="text-muted-foreground mt-2">Welcome back!</p>
@@ -58,12 +64,15 @@ export default function DashboardPage() {
               )}
               <div>
                 <p className="font-semibold text-lg">{session.user.name}</p>
-                <p className="text-sm text-muted-foreground">{session.user.email}</p>
+                <p className="text-sm text-muted-foreground">
+                  {session.user.email}
+                </p>
               </div>
             </div>
             <div className="pt-4 border-t">
               <p className="text-sm text-muted-foreground">
-                Session ID: <span className="font-mono">{session.session.id}</span>
+                Session ID:{" "}
+                <span className="font-mono">{session.session.id}</span>
               </p>
             </div>
           </CardContent>
