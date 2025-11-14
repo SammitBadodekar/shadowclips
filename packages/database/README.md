@@ -1,6 +1,6 @@
 # @shadowclips/database
 
-Database package for ShadowClips using Drizzle ORM and PostgreSQL.
+Database package for Shadow Clips using Drizzle ORM and PostgreSQL.
 
 ## Setup
 
@@ -28,6 +28,7 @@ pnpm db:migrate
 ## Schema
 
 This package includes the Better Auth required tables:
+
 - `user` - User accounts
 - `session` - User sessions
 - `account` - OAuth provider accounts

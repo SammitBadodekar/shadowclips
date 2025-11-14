@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Logo } from "@/components/logo";
 import { signIn } from "@/lib/auth-client";
 
 export default function LoginPage() {
@@ -61,37 +62,12 @@ export default function LoginPage() {
               className="flex justify-center mb-2"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-50 animate-pulse" />
-                <div className="relative bg-linear-to-br from-primary to-primary/80 rounded-2xl p-4 shadow-lg">
-                  <svg
-                    className="w-10 h-10 text-primary-foreground"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 2L2 7L12 12L22 7L12 2Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 17L12 22L22 17"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 12L12 17L22 12"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                {/* <div className="absolute inset-0 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-md opacity-50 animate-pulse" /> */}
+                <Logo
+                  width={100}
+                  height={100}
+                  className="text-primary-foreground"
+                />
               </div>
             </motion.div>
             <motion.div
@@ -100,7 +76,7 @@ export default function LoginPage() {
               transition={{ delay: 0.3, duration: 0.5 }}
             >
               <CardTitle className="text-3xl font-bold bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                ShadowClips
+                Shadow Clips
               </CardTitle>
               <CardDescription className="text-base mt-2">
                 Welcome! Sign in to continue
@@ -178,7 +154,7 @@ export default function LoginPage() {
             >
               <Separator className="my-4" />
               <p className="text-xs text-center text-muted-foreground px-4">
-                By continuing, you agree to ShadowClips&apos; Terms of Service
+                By continuing, you agree to Shadow Clips&apos; Terms of Service
                 and Privacy Policy
               </p>
             </motion.div>
