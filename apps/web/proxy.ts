@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { getSessionCookie } from "better-auth/cookies";
 
 // Public routes that don't require authentication
 const publicRoutes = ["/", "/login"];
@@ -8,14 +9,13 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Get the session cookie from Better Auth
-  // Better Auth uses 'better-auth.session_token' by default
-  const sessionToken = request.cookies.get("better-auth.session_token");
-  const isAuthenticated = !!sessionToken?.value;
+  const sessionToken = getSessionCookie(request);
+  const isAuthenticated = !!sessionToken;
 
   // Check if the current route is public
   const isPublicRoute = publicRoutes.some((route) => pathname === route);
 
-  // Check if the current route is the login page
+  // Check if the current route is the login page or home page
   const isLoginRoute = pathname === "/login";
   const isHomeRoute = pathname === "/";
 
