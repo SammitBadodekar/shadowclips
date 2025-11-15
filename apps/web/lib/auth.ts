@@ -19,4 +19,12 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
+  baseURL: process.env.BETTER_AUTH_URL as string,
+  trustedOrigins: [process.env.BETTER_AUTH_URL as string],
+  session: {
+    cookieCache: {
+      enabled: true,
+      maxAge: 5 * 60, // 5 minutes
+    },
+  },
 });
