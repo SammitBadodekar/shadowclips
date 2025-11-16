@@ -1,11 +1,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Audio from "./audio";
+import Generate from "./generate";
 
 export default function FakeTextsPage() {
   return (
-    <div className="flex gap-2 flex-col lg:flex-row">
-      <div className="w-full lg:w-3/5 p-4">
-        <Tabs defaultValue="script" className="w-full">
+    <div className="w-full grid gap-2 grid-cols-1 lg:grid-cols-5  lg:max-w-[calc(100vw-17rem)] min-h-[calc(100svh-4rem)]">
+      <div className="w-full col-start-1 col-end-2 lg:col-span-3 lg:col-start-1 lg:col-end-4 p-4 relative">
+        <Tabs defaultValue="script" className="w-full h-full">
           <TabsList className="w-full p-2 h-max">
             <TabsTrigger value="script">Script</TabsTrigger>
             <TabsTrigger value="theme">Theme</TabsTrigger>
@@ -19,8 +20,11 @@ export default function FakeTextsPage() {
             <Audio />
           </TabsContent>
         </Tabs>
+        <Generate />
       </div>
-      <div className="hidden lg:block lg:w-2/5">tesf</div>
+      <div className="hidden lg:block w-full lg:col-span-2 lg:col-start-4 lg:col-end-6">
+        tesf
+      </div>
     </div>
   );
 }

@@ -77,7 +77,7 @@ export const VoiceFiltersComponent = ({
       {/* Search and Filters row */}
       <div className="flex items-center gap-3 flex-wrap">
         {/* Search input */}
-        <div className="relative flex-1 min-w-[200px] max-w-[300px]">
+        <div className="relative flex-1 max-w-[300px]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <input
             type="text"
