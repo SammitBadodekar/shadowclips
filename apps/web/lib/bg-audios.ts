@@ -1,0 +1,17 @@
+export const bgAudios = [
+  { name: "Funny", path: "/audios/funny.mp3" },
+  { name: "Get You The Moon", path: "/audios/get-you-the-moon.mp3" },
+  { name: "Happening", path: "/audios/happening.mp3" },
+  { name: "Inconsciousness", path: "/audios/inconsciousness.mp3" },
+  { name: "Love You So", path: "/audios/love-you-so.mp3" },
+  { name: "Monkeys Spinni", path: "/audios/monkeys-spinning-monkey.mp3" },
+  { name: "Mystery I", path: "/audios/mystery-I.mp3" },
+  { name: "Mystery II", path: "/audios/mystery-II.mp3" },
+  { name: "Paris", path: "/audios/paris.mp3" },
+  { name: "Particuliere", path: "/audios/particuliere.mp3" },
+  { name: "Scary", path: "/audios/scary.mp3" },
+  { name: "Snowfall", path: "/audios/snowfall.mp3" },
+  { name: "Snowy Peaks I", path: "/audios/snowy_peaks_I.mp3" },
+  { name: "Snowy Peaks II", path: "/audios/snowy_peaks_II.mp3" },
+  { name: "Trending", path: "/audios/trending.mp3" },
+];
