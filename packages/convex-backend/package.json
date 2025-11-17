@@ -28,8 +28,9 @@
   "scripts": {
     "dev": "convex dev",
     "predev": "convex dev --once",
-    "build": "echo 'Convex backend - run convex dev first to initialize'",
-    "codegen": "convex dev --once"
+    "build": "convex deploy --cmd 'echo Build complete' || echo 'Convex backend - skipping deploy in build'",
+    "codegen": "convex dev --once",
+    "postinstall": "[ -n \"$CONVEX_DEPLOY_KEY\" ] && convex deploy --cmd 'echo Deployed' || echo 'Skipping Convex deploy'"
   },
   "dependencies": {
     "@convex-dev/better-auth": "0.9.7",

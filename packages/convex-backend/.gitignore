@@ -1,2 +1,4 @@
-
 .env.local
+node_modules/
+# Don't ignore _generated - it's needed for builds
+# convex/_generated/
