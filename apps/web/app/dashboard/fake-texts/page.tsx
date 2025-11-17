@@ -1,6 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Audio from "./audio";
 import Generate from "./generate";
+import Renderer from "./renderer";
+import Script from "./script";
 
 export default function FakeTextsPage() {
   return (
@@ -13,7 +15,9 @@ export default function FakeTextsPage() {
             <TabsTrigger value="video">Video</TabsTrigger>
             <TabsTrigger value="audio">Audio</TabsTrigger>
           </TabsList>
-          <TabsContent value="script">script</TabsContent>
+          <TabsContent value="script">
+            <Script />
+          </TabsContent>
           <TabsContent value="theme">theme</TabsContent>
           <TabsContent value="video">video</TabsContent>
           <TabsContent value="audio">
@@ -22,8 +26,8 @@ export default function FakeTextsPage() {
         </Tabs>
         <Generate />
       </div>
-      <div className="hidden lg:block w-full lg:col-span-2 lg:col-start-4 lg:col-end-6">
-        tesf
+      <div className="hidden lg:flex w-full lg:col-span-2 lg:col-start-4 lg:col-end-6 h-full p-4">
+        <Renderer />
       </div>
     </div>
   );

@@ -1,0 +1,8 @@
+{
+  "node": {
+    "externalPackages": [
+      "better-auth",
+      "@convex-dev/better-auth"
+    ]
+  }
+}

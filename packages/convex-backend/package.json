@@ -1,0 +1,42 @@
+{
+  "name": "@shadowclips/convex-backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./convex.json": "./convex.json",
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./convex/_generated/api.d.ts",
+      "default": "./convex/_generated/api.js"
+    },
+    "./api": {
+      "types": "./convex/_generated/api.d.ts",
+      "default": "./convex/_generated/api.js"
+    },
+    "./dataModel": {
+      "types": "./convex/_generated/dataModel.d.ts",
+      "default": "./convex/_generated/dataModel.js"
+    },
+    "./server": {
+      "types": "./convex/_generated/server.d.ts",
+      "default": "./convex/_generated/server.js"
+    },
+    "./auth": "./convex/auth.ts",
+    "./http": "./convex/http.ts"
+  },
+  "scripts": {
+    "dev": "convex dev",
+    "predev": "convex dev --once",
+    "build": "echo 'Convex backend - run convex dev first to initialize'",
+    "codegen": "convex dev --once"
+  },
+  "dependencies": {
+    "@convex-dev/better-auth": "0.9.7",
+    "better-auth": "1.3.27",
+    "convex": "1.29.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  }
+}
