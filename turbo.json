@@ -11,7 +11,10 @@
     "GITHUB_CLIENT_SECRET",
     "NEXT_PUBLIC_BETTER_AUTH_URL",
     "NEXT_PUBLIC_CONVEX_URL",
-    "NEXT_PUBLIC_CONVEX_SITE_URL"
+    "NEXT_PUBLIC_CONVEX_SITE_URL",
+    "CONVEX_DEPLOYMENT",
+    "SITE_URL",
+    "CONVEX_DEPLOY_KEY"
   ],
   "tasks": {
     "build": {
@@ -36,7 +39,10 @@
         "GITHUB_CLIENT_SECRET",
         "NEXT_PUBLIC_BETTER_AUTH_URL",
         "NEXT_PUBLIC_CONVEX_URL",
-        "NEXT_PUBLIC_CONVEX_SITE_URL"
+        "NEXT_PUBLIC_CONVEX_SITE_URL",
+        "CONVEX_DEPLOYMENT",
+        "SITE_URL",
+        "CONVEX_DEPLOY_KEY"
       ]
     },
     "lint": {
@@ -62,7 +68,10 @@
         "GITHUB_CLIENT_SECRET",
         "NEXT_PUBLIC_BETTER_AUTH_URL",
         "NEXT_PUBLIC_CONVEX_URL",
-        "NEXT_PUBLIC_CONVEX_SITE_URL"
+        "NEXT_PUBLIC_CONVEX_SITE_URL",
+        "CONVEX_DEPLOYMENT",
+        "SITE_URL",
+        "CONVEX_DEPLOY_KEY"
       ]
     }
   }
