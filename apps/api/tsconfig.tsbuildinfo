@@ -1,0 +1,1 @@
+{"root":["./src/worker.ts","./src/activities/index.ts","./src/activities/video-processing.activity.ts","./src/api/server.ts","./src/api/routes/faceless-short.routes.ts","./src/config/temporal.config.ts","./src/workflows/faceless-short.workflow.ts","./src/workflows/index.ts"],"version":"5.9.2"}
