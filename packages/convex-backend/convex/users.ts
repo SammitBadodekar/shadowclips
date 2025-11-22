@@ -6,12 +6,26 @@ export const listUsers = query({
   args: {},
   handler: async (ctx) => {
     // This will query users from the Better Auth component tables
-    const user = await authComponent.getAuthUser(ctx);
+    console.log("here received request");
 
-    return {
-      currentUser: user,
-      message: "If you see a user here, auth is working and storing data in the component",
-    };
+    try {
+      const user = await authComponent.getAuthUser(ctx);
+      console.log("here received request 2", user);
+
+      return {
+        authenticated: true,
+        currentUser: user,
+        message: "User is authenticated and stored in Better Auth component",
+      };
+    } catch (error) {
+      console.log("User not authenticated", error);
+      return {
+        authenticated: false,
+        currentUser: null,
+        message: "User is not authenticated. Please sign in first.",
+        error: String(error),
+      };
+    }
   },
 });
 

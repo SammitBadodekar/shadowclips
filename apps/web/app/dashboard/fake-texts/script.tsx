@@ -19,6 +19,8 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { GripVertical } from "lucide-react";
+import { useQuery } from "convex/react";
+import { api } from "@shadowclips/convex-backend";
 
 type SortableItemProps = {
   id: string;
@@ -54,6 +56,8 @@ function SortableItem(props: SortableItemProps) {
 }
 
 const Script = () => {
+  const data = useQuery(api.users.listUsers);
+  console.log("data", data);
   const [items, setItems] = useState(["1", "2", "3"]);
 
   const sensors = useSensors(
