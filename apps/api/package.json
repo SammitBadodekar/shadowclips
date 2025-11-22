@@ -12,7 +12,8 @@
     "worker.watch": "nodemon src/worker.ts",
     "server": "ts-node src/api/server.ts",
     "server.watch": "nodemon src/api/server.ts",
-    "dev": "pnpm run worker.watch & pnpm run server.watch"
+    "dev": "concurrently -n \"WORKER,SERVER\" -c \"cyan,green\" \"pnpm worker.watch\" \"pnpm server.watch\"",
+    "start": "concurrently -n \"WORKER,SERVER\" -c \"cyan,green\" \"pnpm worker\" \"pnpm server\""
   },
   "nodemonConfig": {
     "execMap": {
@@ -43,6 +44,7 @@
     "@types/node": "^22.9.1",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
+    "concurrently": "^9.2.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-deprecation": "^3.0.0",
